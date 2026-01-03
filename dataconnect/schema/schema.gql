@@ -1,0 +1,38 @@
+type Service @table {
+  name: String!
+  description: String!
+  priceRange: String
+  estimatedTimeline: String
+  features: [String]
+}
+
+type Project @table {
+  title: String!
+  description: String!
+  startDate: Date!
+  endDate: Date!
+  clientName: String
+  websiteUrl: String
+  imageUrls: [String]
+  technologiesUsed: [String]
+}
+
+type TeamMember @table {
+  name: String!
+  role: String!
+  bio: String!
+  profilePictureUrl: String
+  email: String
+  linkedInUrl: String
+  skills: [String]
+}
+
+type Inquiry @table {
+  name: String!
+  email: String!
+  message: String!
+  createdAt: Timestamp!
+  phoneNumber: String
+  preferredService: String
+  budgetRange: String
+}

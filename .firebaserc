@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "xivaservices": "xivaservices",
+    "default": "xivaservices"
+  },
+  "targets": {},
+  "etags": {}
+}
