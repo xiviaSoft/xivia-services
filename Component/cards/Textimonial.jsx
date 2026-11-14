@@ -1,151 +1,56 @@
 "use client";
-import { Box, Typography, Card, Avatar, Rating, useTheme, useMediaQuery } from "@mui/material";
-import {  collection, getDocs, query, setDoc } from "firebase/firestore";
-import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import { db } from "@/app/firebase";
-import dynamic from "next/dynamic";
 
-const Slider = dynamic(() => import("react-slick"), { ssr: false });
+import { motion } from "framer-motion";
+import { Rating } from "@mui/material";
+import { testimonials } from "@/data/testimonials";
+import styles from "./Textimonial.module.css";
 
-const TestimonialCarousel = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  const [review, setReview] = useState([]);
-
-  const getReviews = async () => {
-    const q = query(collection(db, "testimonials"))
-    const getDoc = await getDocs(q)
-    const data = getDoc.docs.map((review) => review.data())
-    setReview(data)
-  }
-
-
-  useEffect(() => {
-    getReviews()
-  }, [])
-
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: isMobile ? 1 : 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: !isMobile,
-  };
-
+export default function TestimonialCarousel() {
   return (
-    <Box
-      sx={{
-        backgroundColor: "#0a2a49",
-        py: { xs: 4, sm: 6 },
-        px: { xs: 2, sm: 0 },
-        ".slick-dots": {
-          bottom: { xs: -30, sm: -30 }
-        },
-        ".slick-dots li button:before": {
-          color: "white",
-          fontSize: { xs: "8px", sm: "10px" }
-        },
-        ".slick-dots li.slick-active button:before": {
-          color: "white",
-          opacity: 1
-        },
-        ".slick-slide": {
-          px: { xs: 0.5, sm: 1 }
-        }
-      }}
-    >
-      <Typography
-        variant="subtitle1"
-        color="white"
-        align="center"
-        gutterBottom
-        sx={{
-          fontSize: { xs: "0.75rem", sm: "0.875rem" }
-        }}
-      >
-        CLIENT TESTIMONIALS
-      </Typography>
-      <Typography
-        variant="h4"
-        align="center"
-        sx={{
-          fontWeight: "bold",
-          color: "white",
-          mb: 4,
-          fontSize: { xs: "1.5rem", sm: "2rem", md: "2.125rem" },
-          px: { xs: 1, sm: 0 }
-        }}
-      >
-        What Our <span style={{ color: "#00BFFF" }}>Clients Say</span>
-      </Typography>
+    <section className={styles.section}>
+      <div className="container">
+        <div className={styles.header}>
+          <span className="section-label">Client voices</span>
+          <h2 className="section-title">What our clients say</h2>
+        </div>
 
-      <Box sx={{
-        maxWidth: "1100px",
-        mx: "auto",
-        px: { xs: 1, sm: 2 }
-      }}>
-        <Slider {...settings}>
-          {review.map((item, index) => (
-            <Box key={index}>
-              <Card
-                sx={{
-                  p: { xs: 2, sm: 3 },
-                  borderRadius: 2,
-                  minHeight: { xs: 180, sm: 200 },
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between"
-                }}
-              >
-                <Box>
-                  <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    <Avatar
-                      src={item.image}
-                      alt={item.name}
-                      sx={{
-                        width: { xs: 40, sm: 48 },
-                        height: { xs: 40, sm: 48 }
-                      }}
-                    />
-                    <Box sx={{ ml: 2 }}>
-                      <Typography
-                        fontWeight="bold"
-                        fontSize={{ xs: "0.875rem", sm: "1rem" }}
-                      >
-                        {item.name}
-                      </Typography>
-                      <Rating
-                        value={item.rating}
-                        readOnly
-                        size={isMobile ? "small" : "medium"}
-                      />
-                    </Box>
-                  </Box>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      fontSize: { xs: "0.8125rem", sm: "0.875rem" }
-                    }}
-                  >
-                    {item.text}
-                  </Typography>
-                </Box>
-              </Card>
-            </Box>
+        <div className={styles.track}>
+          {testimonials.map((item, index) => (
+            <motion.article
+              key={item.name || index}
+              className={`glass ${styles.card}`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                delay: (index % 3) * 0.08,
+                duration: 0.55,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              <div className={styles.person}>
+                <img
+                  className={styles.avatar}
+                  src={item.image}
+                  alt=""
+                />
+                <div>
+                  <div className={styles.name}>{item.name}</div>
+                  {item.role && (
+                    <div className={styles.role}>{item.role}</div>
+                  )}
+                  <Rating
+                    value={Number(item.rating) || 5}
+                    readOnly
+                    size="small"
+                  />
+                </div>
+              </div>
+              <p className={styles.quote}>{item.text}</p>
+            </motion.article>
           ))}
-        </Slider>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
-};
-
-export default TestimonialCarousel;
+}

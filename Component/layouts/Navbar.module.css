@@ -1,0 +1,126 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.85rem 0;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.75rem 0.55rem 1rem;
+  border-radius: 999px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.link:hover {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.menuBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.menuBtn:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.04);
+}
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(21, 36, 51, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawerPanel {
+  width: min(88vw, 340px);
+  height: 100%;
+  padding: 1.25rem 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 28px 0 0 28px;
+  border-right: none;
+  box-shadow: -24px 0 60px rgba(21, 36, 51, 0.12);
+  will-change: transform;
+}
+
+.drawerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.drawerLink {
+  padding: 0.95rem 1.05rem;
+  border-radius: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.drawerLink:hover {
+  background: rgba(31, 138, 157, 0.08);
+  transform: translateX(4px);
+}
+
+.drawerCta {
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .nav {
+    display: flex;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+}

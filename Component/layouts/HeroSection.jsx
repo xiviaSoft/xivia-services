@@ -1,67 +1,78 @@
+"use client";
 
-import { Box, Button, useMediaQuery, useTheme } from "@mui/material";
-import Title from "../Title/Title";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/app/firebase";
+import styles from "./HeroSection.module.css";
 
-const HeroSection = () => {
-  const theme = useTheme();
+const HeroScene = dynamic(() => import("@/Component/three/HeroScene"), {
+  ssr: false,
+  loading: () => <div className={styles.stageGlow} aria-hidden />,
+});
 
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"), {
-    noSsr: true,
-  });
-  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"), {
-    noSsr: true,
-  });
-
-
-  return (
-    <Box
-      id="herosection"
-      sx={{
-        position: "relative",
-        width: "100%",
-        height: { xs: "500px", sm: "550px", md: "650px" },
-        backgroundImage: "url('/images/herosection.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        color: "white",
-        gap: 2,
-        px: { xs: 1, sm: 6, md: 6 },
-      }}
-    >
-      <Box sx={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", }}>
-        
-      <Title />
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          gap: 2,
-          mt: 1
-        }}
-      >
-        <Button variant="contained" size={isSmallScreen ? "medium" : "large"}>
-          START YOUR PROJECT TODAY
-        </Button>
-
-        <Button
-          variant="outlined"
-          size={isSmallScreen ? "medium" : "large"}
-          sx={{ color: "white", borderColor: "white" }}
-        >
-          <Box component="a" href="#gallery">
-            EXPLORE OUR WORK →
-          </Box>
-        </Button>
-      </Box>
-    </Box>
-    </Box >
-  );
+const FALLBACK = {
+  headline: "Digital products with quiet clarity",
+  support:
+    "We design and build web, mobile, and AI experiences that feel effortless.",
 };
 
-export default HeroSection;
+export default function HeroSection() {
+  const [copy, setCopy] = useState(FALLBACK);
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "title"));
+        if (snapshot.empty) return;
+        const data = snapshot.docs[0].data();
+        setCopy({
+          headline:
+            data["1stLargePara"] || data.headerTitle || FALLBACK.headline,
+          support: data["1stSmallPara"] || FALLBACK.support,
+        });
+      } catch {
+        /* keep fallback */
+      }
+    };
+    load();
+  }, []);
+
+  return (
+    <section id="herosection" className={styles.hero}>
+      <div className={`container ${styles.grid}`}>
+        <motion.div
+          className={styles.copy}
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <h1 className={styles.brandMark}>XiviaSoft</h1>
+          <p className={styles.headline}>{copy.headline}</p>
+          <p className={styles.support}>{copy.support}</p>
+          <div className={styles.actions}>
+            <a href="#contactus" className="btn btn-primary">
+              Start a project
+            </a>
+            <a href="#projects" className="btn btn-ghost">
+              Explore work
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className={`glass ${styles.stage}`}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className={styles.stageGlow} />
+          <div className={styles.canvasWrap}>
+            <HeroScene />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

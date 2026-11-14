@@ -1,284 +1,179 @@
 "use client";
-import { Menu, ExpandMore, ExpandLess } from "@mui/icons-material";
-import {
-  Box,
-  Typography,
-  List,
-  ListItem,
-  Paper,
-  IconButton,
-  useMediaQuery,
-  useTheme,
-  Drawer,
-  Divider,
-  Collapse,
-  styled,
-  Button,
-} from "@mui/material";
-import { useState, useEffect } from "react";
 
-// Styled component for the dropdown menu
-const ServicesSlider = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  top: "100%",
-  left: "50%",
-  transform: "translateX(-50%)",
-  minWidth: "220px",
-  backgroundColor: theme.palette.background.paper,
-  boxShadow: theme.shadows[8],
-  borderRadius: theme.shape.borderRadius,
-  zIndex: theme.zIndex.modal + 1,
-  padding: theme.spacing(1),
-  border: `1px solid ${theme.palette.divider}`,
-}));
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, Close } from "@mui/icons-material";
+import Logo from "@/Component/brand/Logo";
+import styles from "./Navbar.module.css";
 
-// Styled component for the main navigation link
-const NavLink = styled(Typography)(({ theme }) => ({
-  fontWeight: 600,
-  textDecoration: "none",
-  color: theme.palette.text.primary,
-  padding: theme.spacing(1, 0),
-  cursor: "pointer",
-  transition: "color 0.3s ease-in-out",
-  "&:hover": {
-    color: theme.palette.primary.main,
-  },
-  display: "flex",
-  alignItems: "center",
-}));
+const navItems = [
+  { name: "Home", path: "/#herosection" },
+  { name: "Services", path: "/#services" },
+  { name: "Projects", path: "/#projects" },
+  { name: "Products", path: "/#products" },
+  { name: "About", path: "/#aboutus" },
+  { name: "Contact", path: "/#contactus", cta: true },
+];
 
-const Navbar = () => {
-  const theme = useTheme();
-  // Fix flicker by preventing SSR mismatch
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"), { noSsr: true });
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
-
-  // Optional: ensure component only renders after hydration
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null; // avoids mismatch between SSR/CSR
-
-  const navItems = [
-    { name: "Home", path: "#herosection", isCta: false },
-    { name: "Services", path: "#services", isCta: false, },
-    { name: "About Us", path: "#aboutus", isCta: false },
-    { name: "Contact Us", path: "#contactus", isCta: true },
-  ];
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
-  const toggleMobileServices = () => {
-    setMobileServicesOpen(!mobileServicesOpen);
-  };
-
-  const handleServiceMouseEnter = (hasSubItems) => {
-    if (hasSubItems) setServicesOpen(true);
-  };
-
-  const handleServiceMouseLeave = () => {
-    setServicesOpen(false);
-  };
-
-  // Drawer for mobile
-  const drawer = (
-    <Box sx={{ width: 250 }} role="presentation">
-      <Box sx={{ p: 2, display: "flex", justifyContent: "center", scale: 3 }}>
-        <Box component={"img"} src={"/images/logo.png"} height={54} />
-      </Box>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <Box key={item.name}>
-            <ListItem
-              component="a"
-              href={item.path}
-              onClick={(e) => {
-                if (item.subItems) {
-                  e.preventDefault();
-                  toggleMobileServices();
-                } else {
-                  setMobileOpen(false);
-                }
-              }}
-              sx={{
-                justifyContent: "space-between",
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              <Typography
-                fontWeight={600}
-                color={item.isCta ? "primary.main" : "text.primary"}
-              >
-                {item.name}
-              </Typography>
-              {item.subItems &&
-                (mobileServicesOpen ? <ExpandLess /> : <ExpandMore />)}
-            </ListItem>
-            {item.subItems && (
-              <Collapse in={mobileServicesOpen} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  {item.subItems.map((subItem) => (
-                    <ListItem
-                      button
-                      key={subItem.name}
-                      component="a"
-                      href={subItem.path}
-                      onClick={() => setMobileOpen(false)}
-                      sx={{
-                        pl: 4,
-                        "&:hover": { backgroundColor: theme.palette.action.hover },
-                      }}
-                    >
-                      <Typography variant="body2">{subItem.name}</Typography>
-                    </ListItem>
-                  ))}
-                </List>
-              </Collapse>
-            )}
-            <Divider variant="middle" />
-          </Box>
-        ))}
-      </List>
-    </Box>
-  );
-
-  return (
-    <Box>
-      <Paper
-        elevation={4}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          px: { xs: 2, md: 8, lg: 12 },
-          position: "sticky",
-          top: 0,
-          backgroundColor: theme.palette.background.paper + "E6",
-          backdropFilter: "blur(5px)",
-          zIndex: theme.zIndex.appBar,
-        }}
-      >
-        <Box sx={{ p: 2, display: "flex", justifyContent: "center", scale: 3 }}>
-          <Box component={"img"} src={"/images/logo.png"} height={54} />
-        </Box>
-
-        {isMobile ? (
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            size="large"
-          >
-            <Menu />
-          </IconButton>
-        ) : (
-          <List
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              p: 0,
-              m: 0,
-              gap: "30px",
-              position: "relative",
-            }}
-          >
-            {navItems.map((item) => (
-              <Box
-                key={item.name}
-                onMouseEnter={() => handleServiceMouseEnter(!!item.subItems)}
-                onMouseLeave={handleServiceMouseLeave}
-                sx={{
-                  position: "relative",
-                  display: "flex",
-                  alignItems: "center",
-                  height: "100%",
-                }}
-              >
-                {item.isCta ? (
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    href={item.path}
-                    sx={{ borderRadius: 50, px: 3, fontWeight: 700 }}
-                  >
-                    {item.name}
-                  </Button>
-                ) : (
-                  <NavLink
-                    component="a"
-                    href={item.path}
-                    onClick={
-                      item.subItems ? (e) => e.preventDefault() : undefined
-                    }
-                  >
-                    {item.name}
-                    {item.subItems &&
-                      (servicesOpen ? (
-                        <ExpandLess sx={{ ml: 0.5, fontSize: "1.2rem" }} />
-                      ) : (
-                        <ExpandMore sx={{ ml: 0.5, fontSize: "1.2rem" }} />
-                      ))}
-                  </NavLink>
-                )}
-
-                {item.subItems && servicesOpen && (
-                  <ServicesSlider>
-                    <List disablePadding>
-                      {item.subItems.map((subItem) => (
-                        <ListItem
-                          key={subItem.name}
-                          component="a"
-                          href={subItem.path}
-                          onClick={handleServiceMouseLeave}
-                          sx={{
-                            p: 1.5,
-                            textDecoration: "none",
-                            color: theme.palette.text.primary,
-                            transition: "background-color 0.2s",
-                            "&:hover": {
-                              backgroundColor: theme.palette.primary.light,
-                              color: theme.palette.primary.contrastText,
-                            },
-                            borderRadius: "4px",
-                          }}
-                        >
-                          <Typography variant="body1" fontWeight={500}>
-                            {subItem.name}
-                          </Typography>
-                        </ListItem>
-                      ))}
-                    </List>
-                  </ServicesSlider>
-                )}
-              </Box>
-            ))}
-          </List>
-        )}
-      </Paper>
-
-      <Drawer
-        variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{ keepMounted: true }}
-        anchor="right"
-        sx={{
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 250 },
-        }}
-      >
-        {drawer}
-      </Drawer>
-    </Box>
-  );
+const backdropMotion = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
-export default Navbar;
+const panelMotion = {
+  hidden: { x: "100%", opacity: 0.6 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 280, damping: 32, mass: 0.9 },
+  },
+  exit: {
+    x: "100%",
+    opacity: 0.6,
+    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const linkMotion = {
+  hidden: { opacity: 0, x: 24 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.08 + i * 0.05,
+      duration: 0.4,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const brandHref = pathname === "/" ? "#herosection" : "/";
+
+  return (
+    <header className={styles.header}>
+      <div className="container">
+        <div
+          className={`glass-strong ${styles.bar}`}
+          style={{
+            boxShadow: scrolled
+              ? "0 16px 40px rgba(21, 36, 51, 0.12)"
+              : undefined,
+          }}
+        >
+          <a href={brandHref} className={styles.brand} aria-label="XiviaSoft home">
+            <Logo size={36} />
+          </a>
+
+          <nav className={styles.nav} aria-label="Primary">
+            {navItems.map((item) =>
+              item.cta ? (
+                <a key={item.name} href={item.path} className="btn btn-primary">
+                  {item.name}
+                </a>
+              ) : (
+                <a key={item.name} href={item.path} className={styles.link}>
+                  {item.name}
+                </a>
+              )
+            )}
+          </nav>
+
+          <button
+            type="button"
+            className={styles.menuBtn}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <motion.span
+              key={open ? "close" : "menu"}
+              initial={{ opacity: 0, rotate: -40, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              transition={{ duration: 0.25 }}
+              style={{ display: "grid", placeItems: "center" }}
+            >
+              {open ? <Close /> : <Menu />}
+            </motion.span>
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className={styles.drawer}
+            variants={backdropMotion}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            onClick={() => setOpen(false)}
+          >
+            <motion.div
+              className={`glass-strong ${styles.drawerPanel}`}
+              variants={panelMotion}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className={styles.drawerTop}>
+                <Logo size={34} />
+                <button
+                  type="button"
+                  className={styles.menuBtn}
+                  aria-label="Close menu"
+                  onClick={() => setOpen(false)}
+                >
+                  <Close />
+                </button>
+              </div>
+
+              <nav className={styles.drawerNav} aria-label="Mobile">
+                {navItems.map((item, i) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.path}
+                    custom={i}
+                    variants={linkMotion}
+                    initial="hidden"
+                    animate="visible"
+                    className={item.cta ? `btn btn-primary ${styles.drawerCta}` : styles.drawerLink}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
+              </nav>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}

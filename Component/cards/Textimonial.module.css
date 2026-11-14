@@ -1,0 +1,75 @@
+.section {
+  padding-block: var(--space-section);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header .section-title {
+  max-width: none;
+  margin-inline: auto;
+}
+
+.track {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.4rem 1.45rem;
+  border-radius: var(--radius-md);
+  height: 100%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin: 0.15rem 0 0.25rem;
+}
+
+.quote {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  .track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" role="img" aria-label="XiviaSoft">
+  <defs>
+    <linearGradient id="logoRibbonA" x1="8" y1="8" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EB3C1"/>
+      <stop offset="55%" stop-color="#1F8A9D"/>
+      <stop offset="100%" stop-color="#146F7F"/>
+    </linearGradient>
+    <linearGradient id="logoRibbonB" x1="48" y1="8" x2="8" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A8D8C8"/>
+      <stop offset="50%" stop-color="#7FC4D4"/>
+      <stop offset="100%" stop-color="#1F8A9D"/>
+    </linearGradient>
+    <radialGradient id="logoCore" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#E8F7FA"/>
+      <stop offset="100%" stop-color="#5EB3C1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Mark -->
+  <g transform="translate(2,2)">
+    <rect x="0" y="0" width="52" height="52" rx="16" fill="rgba(255,255,255,0.55)" stroke="rgba(255,255,255,0.85)" stroke-width="1.1"/>
+    <path
+      d="M14.2 11.8c1.55-1.55 4.05-1.55 5.6 0L40.2 32.2c1.55 1.55 1.55 4.05 0 5.6s-4.05 1.55-5.6 0L14.2 17.4c-1.55-1.55-1.55-4.05 0-5.6Z"
+      fill="url(#logoRibbonA)"
+      opacity="0.92"
+    />
+    <path
+      d="M37.8 11.8c1.55 1.55 1.55 4.05 0 5.6L17.4 37.8c-1.55 1.55-4.05 1.55-5.6 0s-1.55-4.05 0-5.6L32.2 11.8c1.55-1.55 4.05-1.55 5.6 0Z"
+      fill="url(#logoRibbonB)"
+      opacity="0.9"
+    />
+    <circle cx="26" cy="26" r="5.4" fill="url(#logoCore)" stroke="rgba(255,255,255,0.95)" stroke-width="1.2"/>
+    <circle cx="24.8" cy="24.6" r="1.45" fill="rgba(255,255,255,0.85)"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="68"
+    y="35"
+    font-family="Syne, 'DM Sans', Arial, sans-serif"
+    font-size="24"
+    font-weight="700"
+    letter-spacing="-0.04em"
+    fill="#152433"
+  >XiviaSoft</text>
+</svg>

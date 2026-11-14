@@ -1,0 +1,234 @@
+.section {
+  padding-block: var(--space-section);
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.shelfWrap {
+  position: relative;
+  padding: 1.5rem 1.25rem 2.25rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.hint {
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border-soft);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+.arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.rail {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-end;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1.5rem 0.35rem 1.75rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.bookWrap {
+  flex: 0 0 auto;
+}
+
+.shelf {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1.35rem;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(220, 232, 240, 0.95)
+  );
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 24px rgba(21, 36, 51, 0.1);
+  pointer-events: none;
+}
+
+.book {
+  position: relative;
+  flex: 0 0 auto;
+  width: 58px;
+  height: 210px;
+  border-radius: 6px 10px 10px 6px;
+  scroll-snap-align: center;
+  cursor: pointer;
+  transform-origin: bottom center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset -8px 0 16px rgba(0, 0, 0, 0.12),
+    inset 3px 0 6px rgba(255, 255, 255, 0.25),
+    0 12px 24px rgba(21, 36, 51, 0.12);
+  transition: box-shadow 0.3s ease;
+  text-decoration: none;
+  display: block;
+  perspective: 800px;
+}
+
+.book:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.book:hover,
+.book:focus-visible {
+  box-shadow:
+    inset -8px 0 16px rgba(0, 0, 0, 0.14),
+    inset 3px 0 6px rgba(255, 255, 255, 0.28),
+    0 22px 40px rgba(31, 138, 157, 0.22);
+}
+
+.spine {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 1rem 0.2rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.bandAlt {
+  top: auto;
+  bottom: 16%;
+}
+
+.pages {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  right: 0;
+  width: 5px;
+  border-radius: 0 4px 4px 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    #f7fbfd 0 2px,
+    #e4eef4 2px 3px
+  );
+  opacity: 0.9;
+}
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 14px);
+  transform: translateX(-50%) translateY(6px);
+  min-width: 180px;
+  padding: 0.7rem 0.85rem;
+  border-radius: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 3;
+  text-align: left;
+  writing-mode: horizontal-tb;
+}
+
+.book:hover .tooltip,
+.book:focus-visible .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tipClient {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.tipTitle {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.tipMeta {
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+@media (min-width: 700px) {
+  .book {
+    width: 64px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .book {
+    width: 70px;
+    height: 260px;
+  }
+
+  .spine {
+    font-size: 0.9rem;
+  }
+}

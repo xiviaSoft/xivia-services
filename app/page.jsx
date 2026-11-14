@@ -1,103 +1,95 @@
 "use client";
-import { motion } from "framer-motion";
-import dynamic from 'next/dynamic';
 
-// Dynamically import all heavy components
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import Navbar from "@/Component/layouts/Navbar";
+import HeroSection from "@/Component/layouts/HeroSection";
+
 const Aboutus = dynamic(() => import("@/Component/cards/Aboutus"), {
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div>,
+  loading: () => <div className="section container" style={{ minHeight: 240 }} />,
 });
 
-const Gallery = dynamic(() => import("@/Component/cards/Gallery/Gallery"), {
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div>,
+const Bookshelf = dynamic(() => import("@/Component/projects/Bookshelf"), {
+  loading: () => <div className="section container" style={{ minHeight: 320 }} />,
+});
+
+const Products = dynamic(() => import("@/Component/products/Products"), {
+  loading: () => <div className="section container" style={{ minHeight: 260 }} />,
 });
 
 const Team = dynamic(() => import("@/Component/cards/Team"), {
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-lg"></div>,
+  loading: () => <div className="section container" style={{ minHeight: 280 }} />,
 });
 
-const TestimonialCarousel = dynamic(() => import("@/Component/cards/Textimonial"), {
-  loading: () => <div className="h-64 bg-gray-100 animate-pulse rounded-lg"></div>,
+const TestimonialCarousel = dynamic(
+  () => import("@/Component/cards/Textimonial"),
+  {
+    loading: () => (
+      <div className="section container" style={{ minHeight: 220 }} />
+    ),
+  }
+);
+
+const ContactForm = dynamic(() => import("@/Component/contact/ContactForm"), {
+  loading: () => <div className="section container" style={{ minHeight: 360 }} />,
 });
 
 const Footer = dynamic(() => import("@/Component/common/Footer"), {
-  loading: () => <div className="h-48 bg-gray-800 animate-pulse"></div>,
+  loading: () => <div className="container" style={{ minHeight: 180 }} />,
 });
 
-const HeroSection = dynamic(() => import("@/Component/layouts/HeroSection"));
-const Services = dynamic(() => import("@/Component/layouts/Services"));
-const Navbar = dynamic(() => import("@/Component/layouts/Navbar"));
+const Services = dynamic(() => import("@/Component/layouts/Services"), {
+  loading: () => <div className="section container" style={{ minHeight: 280 }} />,
+});
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+function Reveal({ children }) {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.18 }}
+      variants={fadeInUp}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function Home() {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
-
   return (
     <>
       <Navbar />
-
-      {/* Hero Section - Keep immediate load */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
-        <HeroSection />
-      </motion.div>
-
-      {/* Services */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
+      <HeroSection />
+      <Reveal>
         <Services />
-      </motion.div>
-
-      {/* Gallery */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
-        <Gallery />
-      </motion.div>
-
-      {/* About Us */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
+      </Reveal>
+      <Reveal>
+        <Bookshelf />
+      </Reveal>
+      <Reveal>
+        <Products />
+      </Reveal>
+      <Reveal>
         <Aboutus />
-      </motion.div>
-
-      {/* Testimonial Carousel */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
+      </Reveal>
+      <Reveal>
         <TestimonialCarousel />
-      </motion.div>
-
-      {/* Team */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
+      </Reveal>
+      <Reveal>
         <Team />
-      </motion.div>
-
-      {/* Footer */}
+      </Reveal>
+      <Reveal>
+        <ContactForm />
+      </Reveal>
       <Footer />
     </>
   );

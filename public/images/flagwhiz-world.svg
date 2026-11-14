@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7EEF4"/>
+      <stop offset="1" stop-color="#E8F6F1"/>
+    </linearGradient>
+    <linearGradient id="land" x1="80" y1="40" x2="560" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FC4D4"/>
+      <stop offset="1" stop-color="#1F8A9D"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+  <rect width="640" height="360" rx="28" fill="url(#ocean)"/>
+  <g opacity="0.18" stroke="#1F8A9D" stroke-width="1">
+    <ellipse cx="320" cy="180" rx="250" ry="120"/>
+    <ellipse cx="320" cy="180" rx="180" ry="90"/>
+    <ellipse cx="320" cy="180" rx="110" ry="55"/>
+    <line x1="70" y1="180" x2="570" y2="180"/>
+    <line x1="320" y1="50" x2="320" y2="310"/>
+  </g>
+  <g fill="url(#land)" opacity="0.55" filter="url(#soft)">
+    <path d="M146 118c22-18 48-20 74-8 18 8 28 24 24 42-6 24-28 34-52 38-26 4-48-8-58-28-8-16-4-32 12-44Z"/>
+    <path d="M268 96c28-10 58-4 78 18 14 16 16 38 4 56-14 22-42 30-68 24-30-6-48-28-46-54 2-18 14-36 32-44Z"/>
+    <path d="M390 132c26-16 58-12 78 10 16 18 16 44-2 60-20 18-50 20-74 8-22-12-32-36-24-58 6-14 12-16 22-20Z"/>
+    <path d="M188 214c34-8 62 6 74 34 10 24-2 48-28 58-28 10-58 0-74-22-14-20-8-48 10-60 6-4 12-8 18-10Z"/>
+    <path d="M330 228c30-14 64-6 82 20 14 20 10 48-12 62-26 16-60 12-80-8-18-18-16-44 2-60 2-2 4-8 8-14Z"/>
+    <path d="M470 210c24-10 50-2 62 20 10 20 4 44-16 56-22 14-50 10-66-8-14-16-12-40 4-54 4-4 10-10 16-14Z"/>
+  </g>
+  <g>
+    <circle cx="170" cy="140" r="7" fill="#fff" stroke="#5EB3C1" stroke-width="2"/>
+    <circle cx="300" cy="126" r="7" fill="#fff" stroke="#5EB3C1" stroke-width="2"/>
+    <circle cx="430" cy="156" r="7" fill="#fff" stroke="#5EB3C1" stroke-width="2"/>
+    <circle cx="230" cy="246" r="7" fill="#fff" stroke="#5EB3C1" stroke-width="2"/>
+    <circle cx="370" cy="250" r="7" fill="#fff" stroke="#5EB3C1" stroke-width="2"/>
+    <circle cx="510" cy="232" r="7" fill="#fff" stroke="#5EB3C1" stroke-width="2"/>
+  </g>
+  <g stroke="#1F8A9D" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.45">
+    <path d="M170 140C220 110 270 110 300 126"/>
+    <path d="M300 126C350 150 400 140 430 156"/>
+    <path d="M230 246C290 220 330 220 370 250"/>
+    <path d="M370 250C430 270 480 250 510 232"/>
+  </g>
+</svg>

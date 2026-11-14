@@ -1,131 +1,98 @@
 "use client";
-import { Grid, Typography, Card, CardContent, IconButton, Box, } from "@mui/material";
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Facebook, Instagram } from "@mui/icons-material";
 import { collection, getDocs, query } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
 import { db } from "@/app/firebase";
-import Image from "next/image";
+import styles from "./Team.module.css";
 
 export default function TeamSection() {
   const [team, setTeam] = useState([]);
 
-  const getTeam = async () => {
-    const q = query(collection(db, "team-member"));
-    const data = await getDocs(q);
-    const team = data.docs.map((member) => ({ id: member.id, ...member.data() }));
-    setTeam(team);
-  };
-
   useEffect(() => {
+    const getTeam = async () => {
+      try {
+        const data = await getDocs(query(collection(db, "team-member")));
+        setTeam(
+          data.docs.map((member) => ({ id: member.id, ...member.data() }))
+        );
+      } catch (error) {
+        console.error("Error fetching team:", error);
+      }
+    };
     getTeam();
   }, []);
 
   return (
-    <Box sx={{ py: 8, textAlign: "center" }}>
-      <Typography
-        variant="subtitle2"
-        color="primary"
-        sx={{ textTransform: "uppercase", mb: 1 }}
-      >
-        Creative Team
-      </Typography>
+    <section className={styles.section}>
+      <div className="container">
+        <div className={styles.header}>
+          <span className="section-label">Creative team</span>
+          <h2 className="section-title">People behind the polish</h2>
+          <p className="section-lead">
+            Experienced professionals who care about craft, clarity, and calm
+            delivery.
+          </p>
+        </div>
 
-      <Typography variant="h4" fontWeight="bold">
-        Experience & Our{" "}
-        <Box
-          component="a"
-          sx={{
-            textDecoration: "underline",
-            fontWeight: "light",
-            textDecorationColor: "#1976d2",
-          }}
-        >
-          Professionals Team
-        </Box>
-      </Typography>
-
-      <Box
-        justifyContent="center"
-        sx={{
-          mt: 4,
-          display: "flex",
-          gap: "20px",
-          alignItems: "center",
-          flexWrap: "wrap",
-        }}
-      >
-        {team.map((member) => (
-          <Grid key={member.id}>
-            <Card
-              sx={{
-                textAlign: "center",
-                boxShadow: 3,
-                borderRadius: 3,
-                height: 450,
-                width: 300,
-                display: "flex",
-                flexDirection: "column",
+        <div className={styles.grid}>
+          {team.map((member, i) => (
+            <motion.article
+              key={member.id}
+              className={`glass ${styles.card}`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                delay: (i % 3) * 0.08,
+                duration: 0.55,
+                ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <Image
+              <img
+                className={styles.photo}
                 src={
                   member.image ||
                   "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=500&h=500&fit=crop&crop=faces"
                 }
                 alt={member.name}
-                width={300}
-                height={220}
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "top",
-                  borderTopLeftRadius: 12,
-                  borderTopRightRadius: 12,
-                }}
               />
-
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" fontWeight="bold">
-                  {member.name}
-                </Typography>
-
-                <Typography variant="body2" color="text.secondary" gutterBottom>
-                  {member.role}
-                </Typography>
-
-                <Typography variant="body2" sx={{ mb: 2 }}>
-                  {member.description}
-                </Typography>
-
-                <Box>
+              <div className={styles.body}>
+                <h3 className={styles.name}>{member.name}</h3>
+                <p className={styles.role}>{member.role}</p>
+                {member.description && (
+                  <p className={styles.desc}>{member.description}</p>
+                )}
+                <div className={styles.socials}>
                   {member.socialLinks?.facebook && (
-                    <IconButton
-                      component="a"
+                    <a
+                      className={styles.social}
                       href={member.socialLinks.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      color="primary"
+                      aria-label={`${member.name} on Facebook`}
                     >
-                      <Facebook />
-                    </IconButton>
+                      <Facebook fontSize="small" />
+                    </a>
                   )}
-
                   {member.socialLinks?.linkedin && (
-                    <IconButton
-                      component="a"
+                    <a
+                      className={styles.social}
                       href={member.socialLinks.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      sx={{ color: "#E4405F" }}
+                      aria-label={`${member.name} on Instagram`}
                     >
-                      <Instagram />
-                    </IconButton> )}
-               
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Box>
-    </Box>
+                      <Instagram fontSize="small" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
