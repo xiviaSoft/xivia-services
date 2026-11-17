@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title description">
+  <title id="title">XiviaPlay game library</title>
+  <desc id="description">A XiviaPlay arcade screen featuring free browser games and genre filters.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#b4ff57"/>
+      <stop offset="1" stop-color="#53e7ff"/>
+    </linearGradient>
+    <linearGradient id="cannon" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ff6b35"/>
+      <stop offset="1" stop-color="#5b4bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="760" rx="32" fill="#101321"/>
+  <circle cx="1120" cy="140" r="220" fill="#ff6b35" opacity=".12"/>
+  <circle cx="80" cy="690" r="250" fill="#5b4bff" opacity=".12"/>
+  <rect x="34" y="28" width="1212" height="72" rx="20" fill="#171a2a" stroke="#31354a" stroke-width="2"/>
+  <rect x="56" y="45" width="38" height="38" rx="12" fill="#202539" stroke="#4b5066"/>
+  <path d="M66 54h10l8 10 8-10h10L86 67l12 12H88l-8-9-8 9H62l12-12Z" fill="url(#accent)"/>
+  <text x="110" y="68" fill="#f3f4f6" font-family="Arial,sans-serif" font-size="24" font-weight="700">XIVIA</text>
+  <text x="180" y="68" fill="#b4ff57" font-family="Arial,sans-serif" font-size="24" font-weight="700">PLAY</text>
+  <text x="262" y="68" fill="#81879a" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2">INSTANT ARCADE / ONLINE</text>
+  <text x="700" y="68" fill="#f3f4f6" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">HOME</text>
+  <text x="790" y="68" fill="#a5a9b8" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">ALL GAMES</text>
+  <text x="916" y="68" fill="#a5a9b8" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">SAVED</text>
+  <rect x="1032" y="45" width="186" height="39" rx="12" fill="#101321" stroke="#31354a"/>
+  <text x="1050" y="70" fill="#81879a" font-family="Arial,sans-serif" font-size="13">Find a game...</text>
+  <text x="62" y="160" fill="#b4ff57" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="3">YOUR ARCADE. YOUR RULES.</text>
+  <text x="58" y="222" fill="#f3f4f6" font-family="Arial,sans-serif" font-size="46" font-weight="700">Play Free Online Games</text>
+  <text x="58" y="269" fill="#b4ff57" font-family="Arial,sans-serif" font-size="39" font-weight="700">at XiviaPlay</text>
+  <text x="60" y="310" fill="#aeb2c0" font-family="Arial,sans-serif" font-size="17">Arcade shooters, classics, brain puzzles, and casual challenges.</text>
+  <rect x="60" y="344" width="190" height="50" rx="14" fill="#ff6b35"/>
+  <text x="81" y="375" fill="#101321" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1">PLAY CANNON BLAST</text>
+  <text x="270" y="375" fill="#d9dbea" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1">EXPLORE THE ARCADE  →</text>
+  <g transform="translate(800 142)">
+    <rect width="402" height="278" rx="24" fill="#171a2a" stroke="#393d54" stroke-width="2"/>
+    <circle cx="209" cy="131" r="88" fill="#5b4bff" opacity=".18"/>
+    <circle cx="210" cy="127" r="43" fill="#ff6b35" opacity=".82"/>
+    <path d="M208 68l7 25 25 8-20 14 2 26-21-15-22 14 8-25-16-21 27 1z" fill="#b4ff57"/>
+    <path d="M94 205l20-45 18 45zm210-50l16 43 43 16-43 15-16 43-16-43-43-15 43-16z" fill="url(#cannon)"/>
+    <text x="28" y="38" fill="#b4ff57" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">FEATURED MISSION</text>
+    <text x="29" y="247" fill="#f3f4f6" font-family="Arial,sans-serif" font-size="21" font-weight="700">CANNON BLAST</text>
+    <text x="29" y="268" fill="#aeb2c0" font-family="Arial,sans-serif" font-size="13">Choose a cannon. Take back the skies.</text>
+  </g>
+  <text x="60" y="468" fill="#f3f4f6" font-family="Arial,sans-serif" font-size="24" font-weight="700">Pick your next mission.</text>
+  <text x="60" y="496" fill="#9096a8" font-family="Arial,sans-serif" font-size="15">12 free games · Play more. Anytime. Anywhere.</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="58" y="526" width="370" height="168" rx="20" fill="#191c2d" stroke="#34384e" stroke-width="2"/>
+    <rect x="58" y="526" width="370" height="86" rx="20" fill="url(#cannon)" opacity=".8"/>
+    <path d="M215 593l20-48 18 48zm122-49l12 31 31 12-31 12-12 31-12-31-31-12 31-12z" fill="#f3f4f6" opacity=".85"/>
+    <text x="78" y="640" fill="#ff9a68" font-size="11" font-weight="700" letter-spacing="2">ACTION · HARD</text>
+    <text x="78" y="670" fill="#f3f4f6" font-size="22" font-weight="700">Cannon Blast</text>
+    <rect x="455" y="526" width="370" height="168" rx="20" fill="#191c2d" stroke="#34384e" stroke-width="2"/>
+    <rect x="455" y="526" width="370" height="86" rx="20" fill="#176c87"/>
+    <path d="M611 584c14-25 34-25 48 0m-24-19v38m-16-16h32" fill="none" stroke="#b4ff57" stroke-width="7" stroke-linecap="round"/>
+    <text x="475" y="640" fill="#77dfff" font-size="11" font-weight="700" letter-spacing="2">ACTION · MEDIUM</text>
+    <text x="475" y="670" fill="#f3f4f6" font-size="22" font-weight="700">Chicken Storm</text>
+    <rect x="852" y="526" width="370" height="168" rx="20" fill="#191c2d" stroke="#34384e" stroke-width="2"/>
+    <rect x="852" y="526" width="370" height="86" rx="20" fill="#6b3f58"/>
+    <path d="M1015 554h42v40h-42zm-14 40h70v9h-70zm29-56v16m-14-16v16m28-16v16" fill="none" stroke="#ffd878" stroke-width="5"/>
+    <text x="872" y="640" fill="#f2a6ca" font-size="11" font-weight="700" letter-spacing="2">ACTION · HARD</text>
+    <text x="872" y="670" fill="#f3f4f6" font-size="22" font-weight="700">Tank Siege</text>
+  </g>
+  <text x="60" y="730" fill="#9096a8" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">ACTION   ·   CLASSICS   ·   PUZZLES   ·   CARDS &amp; BOARD   ·   PARTY</text>
+</svg>

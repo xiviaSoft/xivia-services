@@ -1,4 +1,4 @@
-export const projects = [
+const allProjects = [
   {
     "slug": "hewn",
     "title": "Hewn SF",
@@ -1453,8 +1453,267 @@ export const projects = [
       "Push Notifications",
       "APIs Integration"
     ]
+  },
+  {
+    "slug": "typeflow",
+    "title": "Typeflow",
+    "client": "XiviaSoft",
+    "year": "2026",
+    "type": "Web Application",
+    "industry": "Productivity & Gaming",
+    "short": "A browser-based typing test and arcade that turns focused practice into a playful way to build speed and find your rhythm.",
+    "spineTitle": "Typeflow",
+    "spineColor": "#D6F16A",
+    "spineText": "#101416",
+    "coverImage": "/images/projects/typeflow/cover.svg",
+    "heroImage": "/images/projects/typeflow/cover.svg",
+    "logoImage": "/images/projects/typeflow/icon.svg",
+    "gallery": [
+      "/images/projects/typeflow/cover.svg",
+      "/images/projects/typeflow/modes.svg"
+    ],
+    "siteUrl": "https://typeflwo.com/",
+    "appStoreLink": "",
+    "playStoreLink": "",
+    "headline": "Less thinking. More typing. Just you and the keyboard.",
+    "summary": "Typeflow is a browser-based typing test and arcade. Practice with time, words, quotes, custom text, or zen modes, then explore typing games, keyboard sounds, themes, and trophies.",
+    "introduction": {
+      "title": "Find your typing rhythm",
+      "body": "Typeflow pairs a focused typing test with a playful arcade. Choose a practice mode, follow your speed and accuracy, and make each session your own with themes and keyboard sound controls."
+    },
+    "challenge": {
+      "title": "Make practice feel effortless",
+      "body": "Typing practice can feel repetitive. Typeflow brings a calm, distraction-light test together with flexible modes and arcade challenges to make it easier to build a steady habit."
+    },
+    "collaboration": {
+      "title": "A focused web experience",
+      "body": "The product brings the typing test, progress feedback, customization, and arcade into one cohesive browser experience, with a visual identity built around dark surfaces and a bright lime accent."
+    },
+    "solutionTitle": "A typing test with room to play",
+    "features": [
+      {
+        "title": "Five typing modes",
+        "body": "Practice with time, words, quotes, custom text, or zen mode."
+      },
+      {
+        "title": "Live performance feedback",
+        "body": "Keep track of words per minute, accuracy, elapsed time, and personal bests while typing."
+      },
+      {
+        "title": "Arcade challenges",
+        "body": "Switch from focused practice to a collection of playful typing challenges and earn trophies."
+      },
+      {
+        "title": "Personalized setup",
+        "body": "Choose a visual theme and adjust keyboard sounds and the on-screen keyboard guide."
+      }
+    ],
+    "results": [
+      {
+        "value": "5",
+        "label": "Typing modes"
+      },
+      {
+        "value": "4",
+        "label": "Timed test lengths"
+      },
+      {
+        "value": "6",
+        "label": "Arcade challenges"
+      }
+    ],
+    "quote": {
+      "text": "Less thinking. More typing. Just you and the keyboard.",
+      "author": "Typeflow",
+      "role": "Find your typing rhythm"
+    },
+    "technologies": [
+      "React",
+      "JavaScript",
+      "Vite",
+      "CSS"
+    ]
+  },
+  {
+    "slug": "xiviaplay",
+    "title": "XiviaPlay",
+    "client": "XiviaSoft",
+    "year": "2026",
+    "type": "Web Platform",
+    "industry": "Gaming & Entertainment",
+    "short": "A free browser arcade for action games, classics, puzzles, and party games — ready to play without downloads.",
+    "spineTitle": "XiviaPlay",
+    "spineColor": "#FF6B35",
+    "spineText": "#FFFFFF",
+    "coverImage": "/images/projects/xiviaplay/cover.svg",
+    "heroImage": "/images/projects/xiviaplay/cover.svg",
+    "logoImage": "/images/projects/xiviaplay/icon.svg",
+    "gallery": [
+      "/images/projects/xiviaplay/cover.svg",
+      "/images/projects/xiviaplay/arcade.svg"
+    ],
+    "siteUrl": "https://xiviaplay.web.app/",
+    "appStoreLink": "",
+    "playStoreLink": "",
+    "headline": "Your arcade. Your rules. Play free online games at XiviaPlay.",
+    "summary": "XiviaPlay is a free online arcade with 12 browser games across action, classics, puzzles, cards and board, and party categories. Games are playable instantly without downloads.",
+    "introduction": {
+      "title": "An arcade built for instant play",
+      "body": "XiviaPlay brings a growing collection of free browser games into one place, from action shooters and arcade classics to puzzles, card games, and party picks."
+    },
+    "challenge": {
+      "title": "Bring a varied game library together",
+      "body": "Players want to move between quick action, familiar classics, and slower puzzles without searching across separate destinations. XiviaPlay organizes those choices in one accessible arcade."
+    },
+    "collaboration": {
+      "title": "Browse, save, and start playing",
+      "body": "The platform combines genre navigation, game search, saved favorites, and featured missions to help players find a game and start directly in the browser."
+    },
+    "solutionTitle": "A home for quick browser games",
+    "features": [
+      {
+        "title": "Instant browser play",
+        "body": "Open games directly from the site without downloading an app."
+      },
+      {
+        "title": "Twelve free games",
+        "body": "Explore a curated library spanning action shooters, classic arcade games, brain puzzles, and casual challenges."
+      },
+      {
+        "title": "Five game categories",
+        "body": "Browse action, classics, puzzles, cards and board, or party games."
+      },
+      {
+        "title": "Game discovery",
+        "body": "Find titles with search, explore featured missions, and save favorites for later."
+      }
+    ],
+    "results": [
+      {
+        "value": "12",
+        "label": "Free browser games"
+      },
+      {
+        "value": "5",
+        "label": "Game categories"
+      },
+      {
+        "value": "3",
+        "label": "Action shooters"
+      }
+    ],
+    "quote": {
+      "text": "Your arcade. Your rules.",
+      "author": "XiviaPlay",
+      "role": "Platform tagline"
+    },
+    "technologies": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "CSS"
+    ]
+  },
+  {
+    "slug": "safe-leaders-innovation",
+    "title": "Safe Leaders Innovation",
+    "client": "Safe Leaders Innovation",
+    "year": "2026",
+    "type": "Corporate Website",
+    "industry": "Construction & Infrastructure",
+    "short": "A corporate website presenting a construction and infrastructure company's services, project portfolio, and ways to get in touch.",
+    "spineTitle": "Safe Leaders",
+    "spineColor": "#07152F",
+    "spineText": "#FFFFFF",
+    "coverImage": "/images/projects/safe-leaders-innovation/cover.jpg",
+    "heroImage": "/images/projects/safe-leaders-innovation/cover.jpg",
+    "logoImage": "/images/projects/safe-leaders-innovation/logo.png",
+    "gallery": [
+      "/images/projects/safe-leaders-innovation/cover.jpg",
+      "/images/projects/safe-leaders-innovation/project-gallery.jpg",
+      "/images/projects/safe-leaders-innovation/about.jpg"
+    ],
+    "siteUrl": "https://www.safeleadersinnovation.com/",
+    "appStoreLink": "",
+    "playStoreLink": "",
+    "headline": "Building with precision, integrity, and innovation — every step of the way.",
+    "summary": "The Safe Leaders Innovation website introduces its construction and infrastructure services, showcases selected projects and team members, and provides callback and quote request options.",
+    "introduction": {
+      "title": "A digital presence for construction expertise",
+      "body": "Safe Leaders Innovation provides construction, repair, drilling, electrical, telecommunications, and infrastructure services. The website brings its service portfolio, project highlights, and company information together."
+    },
+    "challenge": {
+      "title": "Present a broad service portfolio",
+      "body": "The company serves multiple sectors and offers a wide range of construction and infrastructure services. The site gives prospective clients a clear way to explore those services and view completed work."
+    },
+    "collaboration": {
+      "title": "Services, projects, and contact in one place",
+      "body": "A company overview, service listings, featured projects, team information, and callback request form provide visitors with a single path from learning about the business to making contact."
+    },
+    "solutionTitle": "A complete corporate web presence",
+    "features": [
+      {
+        "title": "Construction services",
+        "body": "Dedicated listings cover general construction, maintenance, drilling, demolition, wiring, and other infrastructure services."
+      },
+      {
+        "title": "Project portfolio",
+        "body": "A featured project gallery highlights construction and restoration work across multiple locations."
+      },
+      {
+        "title": "Callback requests",
+        "body": "A contact form lets prospective clients submit their details, preferred callback time, and project message."
+      },
+      {
+        "title": "Company and team information",
+        "body": "The site introduces the company's approach and organizational leadership alongside its services."
+      }
+    ],
+    "results": [
+      {
+        "value": "12",
+        "label": "Service categories"
+      },
+      {
+        "value": "8",
+        "label": "Featured projects"
+      },
+      {
+        "value": "4",
+        "label": "Team profiles"
+      }
+    ],
+    "quote": {
+      "text": "Building with precision, integrity, and innovation — every step of the way.",
+      "author": "Safe Leaders Innovation",
+      "role": "Company statement"
+    },
+    "technologies": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS"
+    ]
   }
 ];
+
+const featuredProjectSlugs = [
+  "hewn",
+  "patch-pocket",
+  "dexi-marketplace",
+  "recipe-king",
+  "typeflow",
+  "xiviaplay",
+  "safe-leaders-innovation",
+];
+
+export const projects = allProjects
+  .filter(({ slug }) => featuredProjectSlugs.includes(slug))
+  .sort(
+    (first, second) =>
+      featuredProjectSlugs.indexOf(first.slug) -
+      featuredProjectSlugs.indexOf(second.slug)
+  );
 
 export function getProject(slug) {
   return projects.find((project) => project.slug === slug) || null;

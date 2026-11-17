@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="title description">
+  <title id="title">Typeflow typing test</title>
+  <desc id="description">A dark typing test screen with a lime-accented keyboard, live speed and accuracy, and Typeflow branding.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#111416"/>
+      <stop offset="1" stop-color="#1b231a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d6f16a" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#d6f16a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="900" fill="url(#background)"/>
+  <circle cx="1110" cy="500" r="330" fill="url(#glow)"/>
+  <rect x="28" y="24" width="1384" height="82" rx="24" fill="#1a1e20" stroke="#323839" stroke-width="2"/>
+  <rect x="54" y="45" width="44" height="44" rx="13" fill="#d6f16a" transform="rotate(-8 76 67)"/>
+  <path d="M66 54h20v7h-7v18h-7V61h-6z" fill="#101416"/>
+  <text x="116" y="78" fill="#f5f6f0" font-family="Arial,sans-serif" font-size="32" font-weight="700" letter-spacing="-1">type</text>
+  <text x="180" y="78" fill="#d6f16a" font-family="Arial,sans-serif" font-size="32" font-weight="700" letter-spacing="-1">flwo</text>
+  <circle cx="1313" cy="65" r="13" fill="none" stroke="#a2a9a5" stroke-width="3"/>
+  <path d="M1317 52a14 14 0 1 0 9 23 14 14 0 0 1-9-23z" fill="#1a1e20"/>
+  <rect x="1350" y="53" width="12" height="12" rx="2" fill="none" stroke="#a2a9a5" stroke-width="3"/>
+  <rect x="1369" y="53" width="12" height="12" rx="2" fill="none" stroke="#a2a9a5" stroke-width="3"/>
+  <rect x="1350" y="72" width="12" height="12" rx="2" fill="none" stroke="#a2a9a5" stroke-width="3"/>
+  <rect x="1369" y="72" width="12" height="12" rx="2" fill="none" stroke="#a2a9a5" stroke-width="3"/>
+  <circle cx="66" cy="165" r="7" fill="#d6f16a"/>
+  <text x="86" y="172" fill="#a2c94e" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3">THE TYPING TEST</text>
+  <text x="385" y="172" fill="#6f7776" font-family="Arial,sans-serif" font-size="18" letter-spacing="2">01 / 04</text>
+  <text x="56" y="310" fill="#f5f6f0" font-family="Arial,sans-serif" font-size="102" font-weight="700" letter-spacing="-5">Find your</text>
+  <text x="555" y="310" fill="#d6f16a" font-family="Arial,sans-serif" font-size="102" font-weight="700" letter-spacing="-5">flow.</text>
+  <text x="62" y="362" fill="#a2a9a5" font-family="Arial,sans-serif" font-size="25">Less thinking. More typing. Just you and the keyboard.</text>
+  <g transform="translate(255 455) rotate(-5 400 155)">
+    <rect x="0" y="0" width="820" height="300" rx="30" fill="#1a1e20" stroke="#323839" stroke-width="3"/>
+    <g fill="#202528" stroke="#323839" stroke-width="2" font-family="Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+      <rect x="28" y="28" width="58" height="52" rx="12"/><rect x="96" y="28" width="58" height="52" rx="12"/><rect x="164" y="28" width="58" height="52" rx="12"/><rect x="232" y="28" width="58" height="52" rx="12"/><rect x="300" y="28" width="58" height="52" rx="12"/><rect x="368" y="28" width="58" height="52" rx="12"/><rect x="436" y="28" width="58" height="52" rx="12"/><rect x="504" y="28" width="58" height="52" rx="12"/><rect x="572" y="28" width="58" height="52" rx="12"/><rect x="640" y="28" width="58" height="52" rx="12"/><rect x="708" y="28" width="58" height="52" rx="12"/>
+      <rect x="54" y="92" width="58" height="52" rx="12"/><rect x="122" y="92" width="58" height="52" rx="12"/><rect x="190" y="92" width="58" height="52" rx="12"/><rect x="258" y="92" width="58" height="52" rx="12"/><rect x="326" y="92" width="58" height="52" rx="12"/><rect x="394" y="92" width="58" height="52" rx="12"/><rect x="462" y="92" width="58" height="52" rx="12"/><rect x="530" y="92" width="58" height="52" rx="12"/><rect x="598" y="92" width="58" height="52" rx="12"/><rect x="666" y="92" width="58" height="52" rx="12"/>
+      <rect x="88" y="156" width="58" height="52" rx="12"/><rect x="156" y="156" width="58" height="52" rx="12"/><rect x="224" y="156" width="58" height="52" rx="12"/><rect x="292" y="156" width="58" height="52" rx="12"/><rect x="360" y="156" width="58" height="52" rx="12"/><rect x="428" y="156" width="58" height="52" rx="12"/><rect x="496" y="156" width="58" height="52" rx="12"/><rect x="564" y="156" width="58" height="52" rx="12"/><rect x="632" y="156" width="58" height="52" rx="12"/>
+    </g>
+    <g fill="#a2a9a5" font-family="Arial,sans-serif" font-size="20" font-weight="700" text-anchor="middle">
+      <text x="57" y="62">Q</text><text x="125" y="62">W</text><text x="193" y="62">E</text><text x="261" y="62">R</text><text x="329" y="62">T</text><text x="397" y="62">Y</text><text x="465" y="62">U</text><text x="533" y="62">I</text><text x="601" y="62">O</text><text x="669" y="62">P</text><text x="737" y="62">+</text>
+      <text x="83" y="126">A</text><text x="151" y="126">S</text><text x="219" y="126">D</text><text x="287" y="126">F</text><text x="355" y="126">G</text><text x="423" y="126">H</text><text x="491" y="126">J</text><text x="559" y="126">K</text><text x="627" y="126">L</text>
+      <text x="117" y="190">Z</text><text x="185" y="190">X</text><text x="253" y="190">C</text><text x="321" y="190">V</text><text x="389" y="190">B</text><text x="457" y="190">N</text><text x="525" y="190">M</text>
+    </g>
+    <rect x="220" y="226" width="380" height="42" rx="12" fill="#202528" stroke="#323839" stroke-width="2"/>
+    <rect x="232" y="35" width="48" height="38" rx="9" fill="#293521" stroke="#d6f16a"/>
+    <text x="256" y="61" fill="#d6f16a" font-family="Arial,sans-serif" font-size="18" font-weight="700" text-anchor="middle">R</text>
+    <rect x="196" y="99" width="48" height="38" rx="9" fill="#293521" stroke="#d6f16a"/>
+    <text x="220" y="125" fill="#d6f16a" font-family="Arial,sans-serif" font-size="18" font-weight="700" text-anchor="middle">S</text>
+    <rect x="336" y="163" width="48" height="38" rx="9" fill="#293521" stroke="#d6f16a"/>
+    <text x="360" y="189" fill="#d6f16a" font-family="Arial,sans-serif" font-size="18" font-weight="700" text-anchor="middle">B</text>
+  </g>
+  <rect x="1005" y="405" width="310" height="154" rx="25" fill="#1a1e20" stroke="#323839" stroke-width="2"/>
+  <text x="1040" y="447" fill="#6f7776" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">PERSONAL BEST</text>
+  <text x="1040" y="520" fill="#d6f16a" font-family="Arial,sans-serif" font-size="58" font-weight="700">0</text>
+  <text x="1088" y="518" fill="#a2a9a5" font-family="Arial,sans-serif" font-size="20">wpm</text>
+  <text x="690" y="825" fill="#8fa343" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="4">FIND YOUR RHYTHM</text>
+</svg>

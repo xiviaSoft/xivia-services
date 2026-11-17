@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title description">
+  <title id="title">Typeflow typing modes</title>
+  <desc id="description">The Typeflow typing test with five practice modes, timed lengths, progress, and keyboard settings.</desc>
+  <rect width="1280" height="760" rx="34" fill="#111416"/>
+  <rect x="34" y="30" width="1212" height="76" rx="22" fill="#1a1e20" stroke="#323839" stroke-width="2"/>
+  <rect x="58" y="48" width="40" height="40" rx="12" fill="#d6f16a"/>
+  <path d="M69 56h20v7h-7v18h-7V63h-6z" fill="#101416"/>
+  <text x="112" y="78" fill="#f5f6f0" font-family="Arial,sans-serif" font-size="27" font-weight="700">type</text>
+  <text x="166" y="78" fill="#d6f16a" font-family="Arial,sans-serif" font-size="27" font-weight="700">flwo</text>
+  <text x="58" y="168" fill="#a2c94e" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3">THE TYPING TEST</text>
+  <text x="58" y="222" fill="#f5f6f0" font-family="Arial,sans-serif" font-size="42" font-weight="700">Choose your mode.</text>
+  <text x="58" y="258" fill="#a2a9a5" font-family="Arial,sans-serif" font-size="18">Find a practice rhythm that works for you.</text>
+  <g font-family="Arial,sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <rect x="58" y="290" width="145" height="52" rx="15" fill="#293521" stroke="#d6f16a" stroke-width="2"/><text x="130" y="322" fill="#d6f16a">time</text>
+    <rect x="218" y="290" width="145" height="52" rx="15" fill="#1a1e20" stroke="#323839" stroke-width="2"/><text x="290" y="322" fill="#a2a9a5">words</text>
+    <rect x="378" y="290" width="145" height="52" rx="15" fill="#1a1e20" stroke="#323839" stroke-width="2"/><text x="450" y="322" fill="#a2a9a5">quote</text>
+    <rect x="538" y="290" width="145" height="52" rx="15" fill="#1a1e20" stroke="#323839" stroke-width="2"/><text x="610" y="322" fill="#a2a9a5">custom</text>
+    <rect x="698" y="290" width="145" height="52" rx="15" fill="#1a1e20" stroke="#323839" stroke-width="2"/><text x="770" y="322" fill="#a2a9a5">zen</text>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle">
+    <rect x="58" y="367" width="60" height="40" rx="12" fill="#293521"/><text x="88" y="393" fill="#d6f16a">15</text>
+    <rect x="128" y="367" width="60" height="40" rx="12" fill="#1a1e20" stroke="#323839"/><text x="158" y="393" fill="#a2a9a5">30</text>
+    <rect x="198" y="367" width="60" height="40" rx="12" fill="#1a1e20" stroke="#323839"/><text x="228" y="393" fill="#a2a9a5">60</text>
+    <rect x="268" y="367" width="70" height="40" rx="12" fill="#1a1e20" stroke="#323839"/><text x="303" y="393" fill="#a2a9a5">120</text>
+  </g>
+  <rect x="58" y="438" width="1164" height="246" rx="24" fill="#1a1e20" stroke="#323839" stroke-width="2"/>
+  <text x="94" y="490" fill="#6f7776" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">TIME LEFT</text>
+  <text x="94" y="526" fill="#f5f6f0" font-family="Arial,sans-serif" font-size="28" font-weight="700">15s</text>
+  <text x="244" y="490" fill="#6f7776" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">WPM</text>
+  <text x="244" y="526" fill="#f5f6f0" font-family="Arial,sans-serif" font-size="28" font-weight="700">0</text>
+  <text x="354" y="490" fill="#6f7776" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">ACCURACY</text>
+  <text x="354" y="526" fill="#f5f6f0" font-family="Arial,sans-serif" font-size="28" font-weight="700">100%</text>
+  <rect x="905" y="468" width="272" height="42" rx="12" fill="#202528"/>
+  <rect x="905" y="468" width="82" height="42" rx="12" fill="#293521"/>
+  <text x="946" y="495" fill="#d6f16a" font-family="Arial,sans-serif" font-size="14" font-weight="700" text-anchor="middle">sound</text>
+  <text x="1088" y="495" fill="#a2a9a5" font-family="Arial,sans-serif" font-size="14" font-weight="700" text-anchor="middle">keyboard guide</text>
+  <text x="96" y="590" fill="#a2a9a5" font-family="Arial,sans-serif" font-size="29">practice builds focus, one word at a time</text>
+  <text x="96" y="638" fill="#6f7776" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">CLICK HERE OR PRESS TAB TO START</text>
+</svg>

@@ -26,9 +26,13 @@
   z-index: 1;
 }
 
-.copy .section-title,
+.copy :global(.section-title),
 .title {
   max-width: 14ch;
+}
+
+.copy :global(.section-title) {
+  line-height: 1.25;
 }
 
 .lead {
